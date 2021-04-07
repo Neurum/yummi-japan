@@ -1,16 +1,18 @@
 <template>
-  <div class="menu-container animation">
-    <div class="menu-nav">
-      <div class="appetizers">Appetizers</div>
-      <div class="entrees">Entrees</div>
-      <div class="sushi">Sushi</div>
-      <div class="yaki">Yaki Soba</div>
-      <div class="express">Express Bowls</div>
-      <div class="kids">Kids Meals</div>
-      <div class="sides">Side Items</div>
+  <transition name="zoom" type="animation" appear>
+    <div class="menu-container">
+      <div class="menu-nav">
+        <div class="appetizers">Appetizers</div>
+        <div class="entrees">Entrees</div>
+        <div class="sushi">Sushi</div>
+        <div class="yaki">Yaki Soba</div>
+        <div class="express">Express Bowls</div>
+        <div class="kids">Kids Meals</div>
+        <div class="sides">Side Items</div>
+      </div>
+      <div class="menu"></div>
     </div>
-    <div class="menu"></div>
-  </div>
+  </transition>
 </template>
 
 <script>
@@ -19,8 +21,6 @@ export default {};
 
 <style lang="scss" scoped>
 .menu-container {
-  animation: growBox 1s ease;
-  -webkit-animation: growBox 1s ease;
   margin: 2rem auto 0;
   background: rgba(202, 202, 202, 0.7);
   height: 80%;
@@ -34,12 +34,39 @@ export default {};
   justify-content: space-evenly;
   padding-top: 1rem;
 }
-@keyframes growBox {
-  0% {
-    transform: scale(0);
+
+.zoom-enter-active {
+  animation: zoom-in 0.25s linear forwards;
+  transition: all 0.25s linear;
+}
+
+.zoom-leave-active {
+  animation: zoom-out 0.25s linear forwards;
+  transition: all 0.25s linear;
+}
+
+.zoom-enter-from {
+  transform: scale(0, 0);
+}
+
+.zoom-leave-to {
+  transform: scale(0, 0);
+}
+
+@keyframes zoom-in {
+  from {
+    transform: scale(0, 0);
   }
-  100% {
-    transform: scale(1);
+  to {
+    transform: scale(1, 1);
+  }
+}
+@keyframes zoom-out {
+  from {
+    transform: scale(1, 1);
+  }
+  to {
+    transform: scale(0, 0);
   }
 }
 </style>

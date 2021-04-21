@@ -29,20 +29,21 @@ export default {};
 
     &.router-link-exact-active {
       color: #317b89;
+      text-decoration: overline;
     }
   }
 }
 
 .logo {
   font-family: 'Moyko', san-serif;
-  font-size: 3rem;
+  font-size: 5rem;
   padding-left: 3rem;
 }
 
 .nav-menu {
   a {
     padding-right: 3rem;
-    font-size: 1.25rem;
+    font-size: 2.25rem;
     text-decoration: none;
   }
 }

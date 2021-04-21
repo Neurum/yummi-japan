@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <div class="name">
-      YUMMI JAPAN
+      YUMMI&ensp; JAPAN
     </div>
   </div>
 </template>
@@ -14,6 +14,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+p {
+  font-size: 1.5rem;
+  margin-top: 1.5rem;
+}
 .home {
   margin: 0 auto;
   display: flex;
@@ -24,6 +28,6 @@ export default {
 .name {
   padding-top: 1rem;
   font-family: 'Moyko', san-serif;
-  font-size: 4rem;
+  font-size: 7rem;
 }
 </style>
